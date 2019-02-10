@@ -24,7 +24,6 @@ public class User implements Serializable, Saveable, Loadable {
     private static final String COMMAND_VIEW_FRIDGE = "fridge";
     private static final String COMMAND_BUY = "buy";
     private static final String COMMAND_EAT = "eat";
-    private static final String COMMAND_THROW_OUT = "throw out";
     private static final String COMMAND_QUIT = "quit";
     private static final String COMMAND_SAVE_AND_QUIT = "save";
     private Scanner scanner = new Scanner(System.in);

@@ -12,7 +12,6 @@ public class ShoppingHistory implements Observer, Serializable {
         this.historyMap.put(Status.SOON, new ArrayList<>());
         this.historyMap.put(Status.EXPIRED, new ArrayList<>());
         this.historyMap.put(Status.EATEN, new ArrayList<>());
-        this.historyMap.put(Status.THROWNOUT, new ArrayList<>());
     }
 
     //TODO: INTEGRATE OBSERVER PATTERN AND FRONT-END

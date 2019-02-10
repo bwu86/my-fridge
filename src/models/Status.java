@@ -1,5 +1,5 @@
 package models;
 
 public enum Status {
-    NEW, SOON, EXPIRED, EATEN, THROWNOUT
+    NEW, SOON, EXPIRED, EATEN
 }
