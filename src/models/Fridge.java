@@ -72,7 +72,7 @@ public class Fridge implements Observer, Iterable<FoodManager> {
             if (newIterator.hasNext()){
                 food = (FoodManager) newIterator.next();
             }
-            else{
+            else if(soonIterator.hasNext()){
                 food = (FoodManager) soonIterator.next();
             }
             return food;

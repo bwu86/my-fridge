@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="de47cc3c-47b8-43c5-89d5-ed6a20f89f3b" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/out/production/my-fridge/models/FoodManager.class" afterPath="$PROJECT_DIR$/out/production/my-fridge/models/FoodManager.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/my-fridge/models/Fridge.class" afterPath="$PROJECT_DIR$/out/production/my-fridge/models/Fridge.class" />
-      <change beforePath="$PROJECT_DIR$/src/models/FoodManager.java" afterPath="$PROJECT_DIR$/src/models/FoodManager.java" />
       <change beforePath="$PROJECT_DIR$/src/models/Fridge.java" afterPath="$PROJECT_DIR$/src/models/Fridge.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -88,11 +85,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Fridge.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Fridge.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/models/Fridge.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="37" column="44" lean-forward="false" selection-start-line="37" selection-start-column="44" selection-end-line="37" selection-end-column="44" />
+            <state relative-caret-position="556">
+              <caret line="74" column="44" lean-forward="false" selection-start-line="74" selection-start-column="44" selection-end-line="74" selection-end-column="44" />
               <folding>
                 <element signature="e#1655#1656#0" expanded="true" />
                 <element signature="e#1696#1697#0" expanded="true" />
@@ -103,7 +100,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ShoppingHistory.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ShoppingHistory.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/models/ShoppingHistory.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="84">
@@ -629,7 +626,14 @@
       <option name="project" value="LOCAL" />
       <updated>1549819721964</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Fixed bugs in Fridge, FoodManager classes.">
+      <created>1549821921040</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1549821921040</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -857,9 +861,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="6" column="0" lean-forward="false" selection-start-line="3" selection-start-column="26" selection-end-line="7" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1068,25 +1070,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/ShoppingHistory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/models/Fridge.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="37" column="44" lean-forward="false" selection-start-line="37" selection-start-column="44" selection-end-line="37" selection-end-column="44" />
+        <state relative-caret-position="556">
+          <caret line="74" column="44" lean-forward="false" selection-start-line="74" selection-start-column="44" selection-end-line="74" selection-end-column="44" />
           <folding>
             <element signature="e#1655#1656#0" expanded="true" />
             <element signature="e#1696#1697#0" expanded="true" />
             <element signature="e#1953#1954#0" expanded="true" />
             <element signature="e#2031#2032#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/ShoppingHistory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
