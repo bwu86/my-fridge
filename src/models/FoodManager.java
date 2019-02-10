@@ -7,17 +7,19 @@ import java.util.Observable;
 
 public class FoodManager extends Observable {
     FoodItem food;
-    Integer quantity;
+    final int originalQuantity;
+    int currentQuantity;
     Calendar purchaseDate;
     Calendar expiryDate;
-    int daysUntilSoon;
     Calendar soonDate;
+    int daysUntilSoon;
     BigDecimal price;
     Status status;
 
-    public FoodManager(FoodItem food, int quantity, BigDecimal price, Fridge fridge){
+    public FoodManager(FoodItem food, int originalQuantity, BigDecimal price, Fridge fridge){
         this.food = food;
-        this.quantity = quantity;
+        this.originalQuantity = originalQuantity;
+        this.currentQuantity = originalQuantity;
         this.price = price;
         //TODO: CHANGE THIS TO SOMETHING BETTER
         daysUntilSoon = food.getDaysFresh()/3;
@@ -65,12 +67,22 @@ public class FoodManager extends Observable {
         return food;
     }
 
-    public Integer getQuantity() {
-        return quantity;
+    public int getOriginalQuantity() {
+        return originalQuantity;
     }
 
-    public void setQuantity(Integer quantity) {
-        this.quantity = quantity;
+    public int getCurrentQuantity(){
+        return getCurrentQuantity();
+    }
+
+    public int getTotalEaten(){
+        return originalQuantity - currentQuantity;
+    }
+
+    public void eatQuantity(int quantity) {
+        if (quantity <= this.currentQuantity){
+            this.currentQuantity -= quantity;
+        }
     }
 
     public Calendar getExpiryDate() {
@@ -107,14 +119,14 @@ public class FoodManager extends Observable {
         if (o == null || getClass() != o.getClass()) return false;
         FoodManager that = (FoodManager) o;
         return Objects.equals(food, that.food) &&
-                Objects.equals(quantity, that.quantity) &&
+                Objects.equals(originalQuantity, that.originalQuantity) &&
                 Objects.equals(purchaseDate, that.purchaseDate);
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(food, quantity, purchaseDate);
+        return Objects.hash(food, originalQuantity, purchaseDate);
     }
 
 }

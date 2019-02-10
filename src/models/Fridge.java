@@ -2,7 +2,7 @@ package models;
 
 import java.util.*;
 
-public class Fridge implements Observer {
+public class Fridge implements Observer, Iterable<FoodManager> {
     private HashMap<Status, List<FoodManager>> foodMap = new HashMap<>();
 
     public Fridge() {
@@ -12,16 +12,24 @@ public class Fridge implements Observer {
     }
 
     //TODO: INTEGRATE OBSERVER PATTERN AND FRONT-END
-    private void addItem(FoodManager newItem){
+    public void addItem(FoodManager newItem){
         List<FoodManager> foodList = foodMap.get(newItem.getStatus());
-        foodList.add(newItem);
+        if (!foodList.contains(newItem)){
+            foodList.add(newItem);
+        }
     }
 
     //TODO: INTEGRATE OBSERVER PATTERN AND FRONT-END
-    private void removeItem(FoodManager itemToRemove){
+    public void removeItem(FoodManager itemToRemove){
         List<FoodManager> foodList = foodMap.get(itemToRemove.getStatus());
         if (foodList.contains(itemToRemove)){
             foodList.remove(itemToRemove);
+        }
+    }
+
+    public void updateItems(){
+        for (FoodManager f : this){
+            f.updateStatus();
         }
     }
 
@@ -31,4 +39,32 @@ public class Fridge implements Observer {
         removeItem(foodItem);
         addItem(foodItem);
     }
+
+    @Override
+    public Iterator iterator() {
+        return new FoodIterator();
+    }
+
+    private class FoodIterator implements Iterator<FoodManager> {
+        Iterator newIterator = foodMap.get(Status.NEW).iterator();
+        Iterator soonIterator = foodMap.get(Status.NEW).iterator();
+
+        @Override
+        public boolean hasNext() {
+            return newIterator.hasNext() || soonIterator.hasNext();
+        }
+
+        @Override
+        public FoodManager next() {
+            FoodManager food = null;
+            if (newIterator.hasNext()){
+                food = (FoodManager) newIterator.next();
+            }
+            else{
+                food = (FoodManager) soonIterator.next();
+            }
+            return food;
+        }
+    }
+
 }
