@@ -31,7 +31,11 @@ public class Fridge implements Observer, Iterable<FoodManager> {
     public void updateItems(){
         for (FoodManager f : this){
             f.updateStatus();
+            if (!f.isFresh()){
+                removeItem(f);
+            }
         }
+        foodMap.get(Status.EXPIRED).clear();
     }
 
     public void printFridge(Status status){

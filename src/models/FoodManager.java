@@ -33,7 +33,7 @@ public class FoodManager extends Observable {
         addObserver(fridge);
     }
 
-    private boolean isFresh(){
+    public boolean isFresh(){
         Calendar curDate = Calendar.getInstance();
         return (expiryDate.before(curDate) || (expiryDate.get(Calendar.DAY_OF_YEAR) == curDate.get(Calendar.DAY_OF_YEAR)
                 && expiryDate.get(Calendar.YEAR) == curDate.get(Calendar.YEAR)));
@@ -81,6 +81,10 @@ public class FoodManager extends Observable {
     public void eatQuantity(int quantity) {
         if (quantity <= this.currentQuantity){
             this.currentQuantity -= quantity;
+            if (this.currentQuantity == 0){
+                this.status = Status.EATEN;
+                updateStatus();
+            }
         }
     }
 
