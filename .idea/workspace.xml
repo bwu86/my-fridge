@@ -1,15 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="de47cc3c-47b8-43c5-89d5-ed6a20f89f3b" name="Default" comment="User class&#10;&#10;JSON parser">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/MyFridge.java" />
+    <list default="true" id="de47cc3c-47b8-43c5-89d5-ed6a20f89f3b" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/User.java" afterPath="$PROJECT_DIR$/src/main/User.java" />
-      <change beforePath="$PROJECT_DIR$/src/models/FoodItem.java" afterPath="$PROJECT_DIR$/src/models/FoodItem.java" />
-      <change beforePath="$PROJECT_DIR$/src/models/FoodLibrary" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/models/FoodManager.java" afterPath="$PROJECT_DIR$/src/models/FoodManager.java" />
-      <change beforePath="$PROJECT_DIR$/src/models/Fridge.java" afterPath="$PROJECT_DIR$/src/models/Fridge.java" />
-      <change beforePath="$PROJECT_DIR$/src/models/ShoppingHistory.java" afterPath="$PROJECT_DIR$/src/models/ShoppingHistory.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -141,7 +134,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="shop" />
       </map>
     </option>
   </component>
@@ -364,7 +357,14 @@
       <option name="project" value="LOCAL" />
       <updated>1549789736768</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="User class&#10;&#10;JSON parser">
+      <created>1549838071626</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1549838071626</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TodoView">
@@ -596,6 +596,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -650,6 +651,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="66">
           <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>
