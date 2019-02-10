@@ -6,21 +6,20 @@ import java.util.Objects;
 import java.util.Observable;
 
 public class FoodManager extends Observable {
-    FoodItem food;
-    final int originalQuantity;
-    int currentQuantity;
-    Calendar purchaseDate;
-    Calendar expiryDate;
-    Calendar soonDate;
-    int daysUntilSoon;
-    BigDecimal price;
-    Status status;
+    private FoodItem food;
+    private final int originalQuantity;
+    private int currentQuantity;
+    private Calendar purchaseDate, expiryDate, soonDate;
+    private int daysUntilSoon;
+    private BigDecimal price;
+    private Status status;
 
     public FoodManager(FoodItem food, int originalQuantity, BigDecimal price, Fridge fridge){
         this.food = food;
         this.originalQuantity = originalQuantity;
         this.currentQuantity = originalQuantity;
         this.price = price;
+
         //TODO: CHANGE THIS TO SOMETHING BETTER
         daysUntilSoon = food.getDaysFresh()/3;
 
@@ -34,7 +33,7 @@ public class FoodManager extends Observable {
         addObserver(fridge);
     }
 
-    private boolean fresh(){
+    private boolean isFresh(){
         Calendar curDate = Calendar.getInstance();
         return (expiryDate.before(curDate) || (expiryDate.get(Calendar.DAY_OF_YEAR) == curDate.get(Calendar.DAY_OF_YEAR)
                 && expiryDate.get(Calendar.YEAR) == curDate.get(Calendar.YEAR)));
@@ -43,7 +42,7 @@ public class FoodManager extends Observable {
     public Status updateStatus(){
         Calendar curDate = Calendar.getInstance();
         Status stat;
-        if (fresh()){
+        if (isFresh()){
             if (curDate.before(soonDate)){
                 stat = Status.NEW;
             }
@@ -72,7 +71,7 @@ public class FoodManager extends Observable {
     }
 
     public int getCurrentQuantity(){
-        return getCurrentQuantity();
+        return currentQuantity;
     }
 
     public int getTotalEaten(){

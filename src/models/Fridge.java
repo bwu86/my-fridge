@@ -3,9 +3,10 @@ package models;
 import java.util.*;
 
 public class Fridge implements Observer, Iterable<FoodManager> {
-    private HashMap<Status, List<FoodManager>> foodMap = new HashMap<>();
+    private HashMap<Status, List<FoodManager>> foodMap;
 
     public Fridge() {
+        foodMap = new HashMap<>();
         this.foodMap.put(Status.NEW, new ArrayList<>());
         this.foodMap.put(Status.SOON, new ArrayList<>());
         this.foodMap.put(Status.EXPIRED, new ArrayList<>());
@@ -33,6 +34,13 @@ public class Fridge implements Observer, Iterable<FoodManager> {
         }
     }
 
+    public void printFridge(Status status){
+        List<FoodManager> foodList = foodMap.get(status);
+        for (int i=0; i<foodList.size(); i++){
+            System.out.println(i + " " + foodList.get(i).getFood().getName());
+        }
+    }
+
     @Override
     public void update(Observable o, Object arg) {
         FoodManager foodItem = (FoodManager) o;
@@ -47,7 +55,7 @@ public class Fridge implements Observer, Iterable<FoodManager> {
 
     private class FoodIterator implements Iterator<FoodManager> {
         Iterator newIterator = foodMap.get(Status.NEW).iterator();
-        Iterator soonIterator = foodMap.get(Status.NEW).iterator();
+        Iterator soonIterator = foodMap.get(Status.SOON).iterator();
 
         @Override
         public boolean hasNext() {
