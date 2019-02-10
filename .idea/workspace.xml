@@ -1,18 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="de47cc3c-47b8-43c5-89d5-ed6a20f89f3b" name="Default" comment="Implemented FoodItem, Fridge, FoodManager. &#10;Need to modify observer pattern to better reflect updates. &#10;&#10;TODO: Implement ShoppingHistory, Main.">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/models/FoodLibrary" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/models/Status.java" />
+    <list default="true" id="de47cc3c-47b8-43c5-89d5-ed6a20f89f3b" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/out/production/my-fridge/models/FoodItem.class" afterPath="$PROJECT_DIR$/out/production/my-fridge/models/FoodItem.class" />
       <change beforePath="$PROJECT_DIR$/out/production/my-fridge/models/FoodManager.class" afterPath="$PROJECT_DIR$/out/production/my-fridge/models/FoodManager.class" />
       <change beforePath="$PROJECT_DIR$/out/production/my-fridge/models/Fridge.class" afterPath="$PROJECT_DIR$/out/production/my-fridge/models/Fridge.class" />
       <change beforePath="$PROJECT_DIR$/out/production/my-fridge/models/ShoppingHistory.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/models/FoodItem.java" afterPath="$PROJECT_DIR$/src/models/FoodItem.java" />
-      <change beforePath="$PROJECT_DIR$/src/models/FoodManager.java" afterPath="$PROJECT_DIR$/src/models/FoodManager.java" />
-      <change beforePath="$PROJECT_DIR$/src/models/Fridge.java" afterPath="$PROJECT_DIR$/src/models/Fridge.java" />
-      <change beforePath="$PROJECT_DIR$/src/models/ShoppingHistory.java" afterPath="$PROJECT_DIR$/src/models/ShoppingHistory.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -603,6 +597,14 @@
       <option name="presentableId" value="Default" />
       <updated>1549759868067</updated>
     </task>
+    <task id="LOCAL-00001" summary="Implemented FoodItem, Fridge, FoodManager. &#10;Need to modify observer pattern to better reflect updates. &#10;&#10;TODO: Implement ShoppingHistory, Main.">
+      <created>1549774154110</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1549774154110</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
