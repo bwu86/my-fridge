@@ -7,9 +7,10 @@ public class FoodItem implements Serializable {
     private String name;
     private int daysFresh;
 
-    public FoodItem(String sku, String name){
+    public FoodItem(String sku, String name, int daysFresh){
         this.name = name;
         this.SKU=sku;
+        this.daysFresh = daysFresh;
     }
 
     public int getDaysFresh() {

@@ -1,11 +1,12 @@
 package models;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Calendar;
 import java.util.Objects;
 import java.util.Observable;
 
-public class FoodManager extends Observable {
+public class FoodManager extends Observable implements Serializable {
     private FoodItem food;
     private final int originalQuantity;
     private int currentQuantity;
@@ -19,30 +20,46 @@ public class FoodManager extends Observable {
         this.originalQuantity = originalQuantity;
         this.currentQuantity = originalQuantity;
         this.price = price;
-
         //TODO: CHANGE THIS TO SOMETHING BETTER
         daysUntilSoon = food.getDaysFresh()/3;
-
         Calendar today = Calendar.getInstance();
+        setCalTime(today);
         purchaseDate = today;
         expiryDate = Calendar.getInstance();
+        setCalTime(expiryDate);
         expiryDate.add(Calendar.DATE, food.getDaysFresh());
         soonDate = Calendar.getInstance();
+        setCalTime(soonDate);
         soonDate.add(Calendar.DATE, food.getDaysFresh()-daysUntilSoon);
-        status = updateStatus();
+        this.status = updateStatus();
         addObserver(fridge);
+    }
+
+    private void setCalTime(Calendar calendar) {
+        calendar.set(Calendar.HOUR_OF_DAY, 0);
+        calendar.set(Calendar.MINUTE, 0);
+        calendar.set(Calendar.SECOND, 0);
+        calendar.set(Calendar.MILLISECOND, 0);
     }
 
     public boolean isFresh(){
         Calendar curDate = Calendar.getInstance();
-        return (expiryDate.before(curDate) || (expiryDate.get(Calendar.DAY_OF_YEAR) == curDate.get(Calendar.DAY_OF_YEAR)
+        setCalTime(curDate);
+//        return (curDate.compareTo(expiryDate) <= 0);
+        return (curDate.before(expiryDate) || (expiryDate.get(Calendar.DAY_OF_YEAR) == curDate.get(Calendar.DAY_OF_YEAR)
                 && expiryDate.get(Calendar.YEAR) == curDate.get(Calendar.YEAR)));
     }
 
     public Status updateStatus(){
         Calendar curDate = Calendar.getInstance();
+        setCalTime(curDate);
         Status stat;
-        if (isFresh()){
+
+        if (this.getCurrentQuantity() == 0){
+            stat = Status.EATEN;
+        }
+
+        else if (isFresh()){
             if (curDate.before(soonDate)){
                 stat = Status.NEW;
             }
@@ -53,6 +70,7 @@ public class FoodManager extends Observable {
         else {
             stat = Status.EXPIRED;
         }
+        this.status = stat;
         setChanged();
         notifyObservers(this);
         return stat;
@@ -61,6 +79,7 @@ public class FoodManager extends Observable {
     public Status getStatus(){
         return status;
     }
+
 
     public FoodItem getFood() {
         return food;
@@ -74,17 +93,32 @@ public class FoodManager extends Observable {
         return currentQuantity;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        FoodManager that = (FoodManager) o;
+        return originalQuantity == that.originalQuantity &&
+                Objects.equals(food, that.food) &&
+                Objects.equals(price, that.price) &&
+                status == that.status;
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(food, originalQuantity, purchaseDate, price, status);
+    }
+
     public int getTotalEaten(){
         return originalQuantity - currentQuantity;
+
     }
 
     public void eatQuantity(int quantity) {
         if (quantity <= this.currentQuantity){
             this.currentQuantity -= quantity;
-            if (this.currentQuantity == 0){
-                this.status = Status.EATEN;
-                updateStatus();
-            }
+            updateStatus();
         }
     }
 
@@ -114,22 +148,6 @@ public class FoodManager extends Observable {
 
     public BigDecimal getPrice() {
         return price;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        FoodManager that = (FoodManager) o;
-        return Objects.equals(food, that.food) &&
-                Objects.equals(originalQuantity, that.originalQuantity) &&
-                Objects.equals(purchaseDate, that.purchaseDate);
-    }
-
-    @Override
-    public int hashCode() {
-
-        return Objects.hash(food, originalQuantity, purchaseDate);
     }
 
 }

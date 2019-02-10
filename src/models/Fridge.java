@@ -1,8 +1,9 @@
 package models;
 
+import java.io.Serializable;
 import java.util.*;
 
-public class Fridge implements Observer, Iterable<FoodManager> {
+public class Fridge implements Observer, Iterable<FoodManager>, Serializable {
     private HashMap<Status, List<FoodManager>> foodMap;
 
     public Fridge() {
@@ -20,18 +21,22 @@ public class Fridge implements Observer, Iterable<FoodManager> {
         }
     }
 
+    public List<FoodManager> getFoodList (Status status){
+        return foodMap.get(status);
+    }
+
     //TODO: INTEGRATE OBSERVER PATTERN AND FRONT-END
     public void removeItem(FoodManager itemToRemove){
-        List<FoodManager> foodList = foodMap.get(itemToRemove.getStatus());
-        if (foodList.contains(itemToRemove)){
-            foodList.remove(itemToRemove);
+        if (foodMap.get(itemToRemove.getStatus()).contains(itemToRemove)){
+            foodMap.get(itemToRemove.getStatus()).remove(itemToRemove);
         }
     }
 
     public void updateItems(){
         for (FoodManager f : this){
+            Status oldstat = f.getStatus();
             f.updateStatus();
-            if (!f.isFresh()){
+            if (f.getCurrentQuantity() == 0 || !f.isFresh() || f.getStatus() == Status.EATEN){
                 removeItem(f);
             }
         }
@@ -41,15 +46,18 @@ public class Fridge implements Observer, Iterable<FoodManager> {
     public void printFridge(Status status){
         List<FoodManager> foodList = foodMap.get(status);
         for (int i=0; i<foodList.size(); i++){
-            System.out.println(i + " " + foodList.get(i).getFood().getName());
+            System.out.println((i+1) + " " + foodList.get(i).getFood().getName());
         }
     }
 
     @Override
     public void update(Observable o, Object arg) {
         FoodManager foodItem = (FoodManager) o;
+        Status oldstat = ((FoodManager) o).getStatus();
         removeItem(foodItem);
-        addItem(foodItem);
+        if (foodItem.getStatus() != Status.EATEN){
+            addItem(foodItem);
+        }
     }
 
     @Override
@@ -78,5 +86,4 @@ public class Fridge implements Observer, Iterable<FoodManager> {
             return food;
         }
     }
-
 }

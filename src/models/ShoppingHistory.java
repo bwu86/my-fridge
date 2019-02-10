@@ -36,7 +36,7 @@ public class ShoppingHistory implements Observer, Serializable {
     }
 
     private void changeFoodStatus(FoodManager foodItem, Status status){
-        Status currStatus = foodItem.status;
+        Status currStatus = foodItem.getStatus();
         historyMap.remove(currStatus, foodItem);
         List<FoodManager> tempList =  historyMap.get(status);
         tempList.add(foodItem);
