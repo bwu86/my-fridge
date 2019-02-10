@@ -1,8 +1,9 @@
 package models;
 
+import java.io.Serializable;
 import java.util.*;
 
-public class Fridge implements Observer {
+public class Fridge implements Observer, Serializable {
     private HashMap<Status, List<FoodManager>> foodMap = new HashMap<>();
 
     public Fridge() {

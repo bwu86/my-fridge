@@ -1,82 +1,83 @@
-{
-  "063400141469": {
+[
+  "SKU":"063400141469",
     "name": "Country Harvest Ancient Grains Bread",
     "daysFresh": 14
   },
-  "063400121355": {
+  "SKU":"063400121355",
     "name": "Casa Mendosa Corn Tortillas Triple Baked Medium",
     "daysFresh": 8
   },
-  "062639343293": {
+  "SKU":"062639343293",
     "name": "Western Family Club Soda",
     "daysFresh": 400
   },
-  "043646201288": {
+  "SKU":"043646201288",
     "name": "Maille Dijon Mustard",
     "daysFresh": 90
   },
-  "774290091559": {
+  "SKU":"774290091559",
     "name": "Golden Valley Country Golden Yolks Free Range Brown Eggs",
     "daysFresh": 20
   },
-  "062639349653": {
+  "SKU":"062639349653",
     "name": "Western Family Chompers Marble String Cheese Sticks",
     "daysFresh": 25
   },
-  "063549993431": {
+  "SKU":"063549993431",
     "name": "Saputo Havarti Cheese Slices with Jalapeno",
     "daysFresh": 12
   },
-  "294371000008": {
+  "SKU":"294371000008",
     "name": "Lilydale Turkey Breast, Oven Roasted",
     "daysFresh": 5
   },
-  "294325000009": {
+  "SKU":"294325000009",
     "name": "Save-On-Foods Black Forest Ham, Fresh",
     "daysFresh": 5
   },
-  "062639285753": {
+  "SKU":"062639285753",
     "name": "Western Family Chicken Wings - Hot Buffalo",
     "daysFresh": 40
   },
-  "292249000006": {
+  "SKU":"292249000006",
     "name": "Western Canadian Lean Ground Chicken Breast",
     "daysFresh": 4
   },
-  "033383401638": {
+  "SKU":"033383401638",
     "name": "Avocados Organic Avocados 3cnt",
     "daysFresh": 6
   },
-  "000000040600": {
+  "SKU":"000000040600",
     "name": "Broccoli Fresh, Bundle",
     "daysFresh": 12
   },
-  "000000040709": {
+  "SKU":"000000040709",
     "name": "Celery Bunch, Fresh",
     "daysFresh": 13
   },
-  "000000045933": {
+  "SKU":"000000045933",
     "name": "Cucumber Long English, Fresh",
     "daysFresh": 5
   },
-  "000000046404": {
+  "SKU":"000000046404",
     "name": "Lettuce Romaine, Fresh",
     "daysFresh": 7
   },
-  "000000046657": {
+  "SKU":"000000046657",
     "name": "Onions Yellow, Medium",
     "daysFresh": 14
   },
-  "000000040655": {
+  "SKU":"000000040655",
     "name": "Peppers Green Bell",
     "daysFresh": 14
   },
-  "000000046886": {
+  "SKU":"000000046886",
     "name": "Peppers Red Bell, Hot House",
     "daysFresh": 14
   },
-  "000000046640": {
+  {
+  "SKU":"000000046640",
     "name": "Tomatoes On the Vine, Each",
     "daysFresh": 7
   }
-}
+]

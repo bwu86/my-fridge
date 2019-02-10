@@ -1,6 +1,8 @@
 package models;
 
-public class FoodItem {
+import java.io.Serializable;
+
+public class FoodItem implements Serializable {
     private String SKU;
     private String name;
     private int daysFresh;

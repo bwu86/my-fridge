@@ -1,11 +1,12 @@
 package models;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Calendar;
 import java.util.Objects;
 import java.util.Observable;
 
-public class FoodManager extends Observable {
+public class FoodManager extends Observable implements Serializable {
     FoodItem food;
     Integer quantity;
     Calendar purchaseDate;
